@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/style.css">
+    <title>GUI</title>
+</head>
+
+<body>
+    <div id="headerWrapper">
+        <h1>Control Interface</h1>
+    </div>
+
+    <div id="themeSelection">
+        <label for="theme">Theme:</label>
+        <input type="checkbox" name="theme" id="theme">
+    </div>
+    <div id="ipAddressInput">
+        <label for="ipInput" id="ipInputLabel">IP address:</label>
+        <input type="text" name="ipInput" id="ipInput">
+        <button id="ipSubmitButton">Submit</button>
+    </div>
+    <div id="buttonControls">
+        <button id="startButton">Start</button>
+        <button id="stopButton">Stop</button>
+        <button id="resetButton">Reset</button>
+    </div>
+    <div id="textControls">
+        <div>
+            <label for="numberControl" id="numberControlLabel">Input:</label>
+            <input type="number" name="numberControl" id="numberControl" value="0">
+        </div>
+    </div>
+    <div id="increaseDecrease">
+        <div>
+            <button id="decreaseButton">Decrease</button>
+            <button id="increaseButton">Increase</button>
+        </div>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="static/js/main.js"></script>
+</body>
+
+</html>
