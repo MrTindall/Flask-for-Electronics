@@ -37,6 +37,11 @@ document.addEventListener("DOMContentLoaded", function(){
             sendEventToServer("down");
         }
     });
+    document.addEventListener("keyup", function(e){
+        if (e.key.toLowerCase() == "a" || e.key.toLowerCase() == "d" || e.key.toLowerCase() == "w" || e.key.toLowerCase() == "s") {
+            sendEventToServer("stop");
+        }
+    })
 })
 
 $(function () {

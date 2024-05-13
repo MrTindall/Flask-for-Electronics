@@ -13,10 +13,10 @@ def capture_event():
         event_data = request.json["event"]
 
         if event_data == "start":
-            print("Only using javascript to start it now")
+            print("Start")
             return jsonify({"event": event_data})
         elif event_data == "stop":
-            print("Stopping with just js")
+            print("Stop")
             return jsonify({"event": event_data})
         elif event_data == "up":
             print("Up")
