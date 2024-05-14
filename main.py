@@ -6,7 +6,6 @@ app = Flask(__name__)
 def main():
     return render_template("index.html")
 
-
 @app.route("/capture_event", methods=["POST"])
 def capture_event():
     try:
