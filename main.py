@@ -15,19 +15,22 @@ def capture_event():
 
             return jsonify({"event": event_data})
         elif event_data == "stop":
-            return jsonify({"event": event_data})
+            pass
         elif event_data == "up":
-            return jsonify({"event": event_data})
+            pass
         elif event_data == "down":
-            return jsonify({"event": event_data})
+            pass
         elif event_data == "left":
-            return jsonify({"event": event_data})
+            pass
         elif event_data == "right":
-            return jsonify({"event": event_data})
+            pass
         elif event_data == "reset":
-            return jsonify({"event": event_data})
+            pass
         else:
             return jsonify({"message": "Event not recognized"})
+
+        return jsonify({"event": event_data})
+    
     except Exception as e:
         print(e)
         return jsonify({"error": str(e)})
