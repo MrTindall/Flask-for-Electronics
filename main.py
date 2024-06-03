@@ -29,6 +29,9 @@ def capture_event():
         elif event_data == "right":
             print("Right")
             return jsonify({"event": event_data})
+        elif event_data == "reset":
+            print("Reset")
+            return jsonify({"event": event_data})
         else:
             return jsonify({"message": "Event not recognized"})
     except Exception as e:

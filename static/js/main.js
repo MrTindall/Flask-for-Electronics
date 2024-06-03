@@ -12,6 +12,7 @@ function sendEventToServer(event) {
 document.addEventListener("DOMContentLoaded", function(){
     const startButton = document.getElementById("startButton")
     const stopButton = document.getElementById("stopButton");
+    const resetButton = document.getElementById("resetButton");
     
     startButton.addEventListener("click", function (e) {
         e.preventDefault();
@@ -21,6 +22,11 @@ document.addEventListener("DOMContentLoaded", function(){
     stopButton.addEventListener("click", function (e) {
         e.preventDefault();
         sendEventToServer("stop");
+    })
+
+    resetButton.addEventListener("click", function(e) {
+        e.preventDefault();
+        sendEventToServer("reset");
     })
 
     document.addEventListener("keydown", function (e) {
@@ -59,13 +65,13 @@ $(function () {
     //     alert("Stop was pressed");
     // })
 
-    $("#resetButton").on("click", function (e) {
-        e.preventDefault();
-        if ($("#numberControl").val() != "") {
-            alert("The value was: " + $("#numberControl").val());
-            $("#numberControl").val('0')
-        }
-    })
+    // $("#resetButton").on("click", function (e) {
+    //     e.preventDefault();
+    //     if ($("#numberControl").val() != "") {
+    //         alert("The value was: " + $("#numberControl").val());
+    //         $("#numberControl").val('0')
+    //     }
+    // })
 
     // Gets the cursor x and y position
     $("body").on("mouseover", function (e) {
