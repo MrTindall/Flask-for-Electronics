@@ -10,27 +10,21 @@ def main():
 def capture_event():
     try:
         event_data = request.json["event"]
-
+        print(event_data)
         if event_data == "start":
-            print("Start")
+
             return jsonify({"event": event_data})
         elif event_data == "stop":
-            print("Stop")
             return jsonify({"event": event_data})
         elif event_data == "up":
-            print("Up")
             return jsonify({"event": event_data})
         elif event_data == "down":
-            print("Down")
             return jsonify({"event": event_data})
         elif event_data == "left":
-            print("Left")
             return jsonify({"event": event_data})
         elif event_data == "right":
-            print("Right")
             return jsonify({"event": event_data})
         elif event_data == "reset":
-            print("Reset")
             return jsonify({"event": event_data})
         else:
             return jsonify({"message": "Event not recognized"})

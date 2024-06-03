@@ -26,6 +26,9 @@ document.addEventListener("DOMContentLoaded", function(){
 
     resetButton.addEventListener("click", function(e) {
         e.preventDefault();
+        if ($("#numberControl").val() != "") {
+                $("#numberControl").val('0')
+            }
         sendEventToServer("reset");
     })
 
