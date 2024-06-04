@@ -12,7 +12,7 @@ def capture_event():
         event_data = request.json["event"]
         print(event_data)
         if event_data == "start":
-            return jsonify({"event": event_data})
+            pass
         elif event_data == "stop":
             pass
         elif event_data == "up":
