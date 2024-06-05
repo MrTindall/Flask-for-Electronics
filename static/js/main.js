@@ -1,11 +1,16 @@
-function sendEventToServer(event) {
+function sendEventToServer(event, number = null) {
     fetch("/capture_event", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify({ event: event })
+        body: JSON.stringify({ 
+            event: event,
+            number, number
+        }),
     })
+    .then(response => response.json())
+    .catch(error => console.error("Error:", error))
 }
 
 
@@ -26,10 +31,11 @@ document.addEventListener("DOMContentLoaded", function(){
 
     resetButton.addEventListener("click", function(e) {
         e.preventDefault();
+        sendEventToServer("reset", $("#numberControl").val());
         if ($("#numberControl").val() != "") {
                 $("#numberControl").val('0')
             }
-        sendEventToServer("reset");
+        
     })
 
     document.addEventListener("keydown", function (e) {

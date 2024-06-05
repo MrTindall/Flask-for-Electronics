@@ -10,7 +10,9 @@ def main():
 def capture_event():
     try:
         event_data = request.json["event"]
+        number_data = request.json["number"]
         print(event_data)
+
         if event_data == "start":
             pass
         elif event_data == "stop":
@@ -24,12 +26,12 @@ def capture_event():
         elif event_data == "right":
             pass
         elif event_data == "reset":
-            pass
+            print("The number was " + number_data)
         else:
             return jsonify({"message": "Event not recognized"})
 
         return jsonify({"event": event_data})
-    
+
     except Exception as e:
         print(e)
         return jsonify({"error": str(e)})
