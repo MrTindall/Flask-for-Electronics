@@ -6,7 +6,7 @@ function sendEventToServer(event, number = null) {
         },
         body: JSON.stringify({ 
             event: event,
-            number, number
+            number: number
         }),
     })
     .then(response => response.json())
