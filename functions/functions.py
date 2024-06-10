@@ -11,7 +11,6 @@ class Functions:
         for i in range(0, 100):
             print(i)
             time.sleep(.05)
-            print(self.is_running)
             
             if not self.is_running:
                 break
