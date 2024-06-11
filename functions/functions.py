@@ -4,6 +4,12 @@ class Functions:
 
     def __init__(self):
        self.is_running = False
+       
+    def get_is_running(self):
+        return self.is_running
+    
+    def set_is_running(self, bool):
+        self.is_running = bool
     
     def count_to_100(self):
         for i in range(0, 100):
@@ -20,6 +26,3 @@ class Functions:
             
             if not self.is_running:
                 break
-    
-    def set_is_running(self, bool):
-        self.is_running = bool
