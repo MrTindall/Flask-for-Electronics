@@ -1,9 +1,7 @@
 import time
 
 class Functions:
-    
-    # is_running = False
-    
+
     def __init__(self):
        self.is_running = False
     
