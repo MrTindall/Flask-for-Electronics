@@ -14,7 +14,7 @@ class Functions:
     def count_to_100(self):
         for i in range(0, 100):
             print(i)
-            time.sleep(.001)
+            time.sleep(.05)
             
             if not self.is_running:
                 break
@@ -22,7 +22,7 @@ class Functions:
     def print_hello_100_times(self):
         for i in range(0, 100):
             print("hello")
-            time.sleep(.001)
+            time.sleep(.05)
             
             if not self.is_running:
                 break
