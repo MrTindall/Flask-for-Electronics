@@ -2,15 +2,15 @@ import time
 
 class Functions:
     
-    is_running = False
+    # is_running = False
     
-    def __init__(self) -> None:
-        pass
+    def __init__(self):
+       self.is_running = False
     
     def count_to_100(self):
         for i in range(0, 100):
             print(i)
-            time.sleep(.05)
+            time.sleep(.001)
             
             if not self.is_running:
                 break
@@ -18,7 +18,7 @@ class Functions:
     def print_hello_100_times(self):
         for i in range(0, 100):
             print("hello")
-            time.sleep(0.05)
+            time.sleep(.001)
             
             if not self.is_running:
                 break
