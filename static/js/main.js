@@ -1,17 +1,24 @@
-function sendEventToServer(event) {
+function sendEventToServer(event, number = null) {
     fetch("/capture_event", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify({ event: event })
+        body: JSON.stringify({ 
+            event: event,
+            number: number
+        }),
     })
+    .then(response => response.json())
+    .catch(error => console.error("Error:", error))
 }
 
 
 document.addEventListener("DOMContentLoaded", function(){
-    const startButton = document.getElementById("startButton")
+    const startButton = document.getElementById("startButton");
     const stopButton = document.getElementById("stopButton");
+    const resetButton = document.getElementById("resetButton");
+    const numberControl = document.getElementById("numberControl");
     
     startButton.addEventListener("click", function (e) {
         e.preventDefault();
@@ -21,6 +28,14 @@ document.addEventListener("DOMContentLoaded", function(){
     stopButton.addEventListener("click", function (e) {
         e.preventDefault();
         sendEventToServer("stop");
+    })
+
+    resetButton.addEventListener("click", function(e) {
+        e.preventDefault();
+        sendEventToServer("reset", $("#numberControl").val());
+        if (numberControl.value != "") {
+            numberControl.value = "0";
+        }
     })
 
     document.addEventListener("keydown", function (e) {
@@ -45,27 +60,6 @@ document.addEventListener("DOMContentLoaded", function(){
 })
 
 $(function () {
-
-    // Start, Stop, Reset button 
-    // $("#startButton").on("click", function (e) {
-    //     e.preventDefault();
-    //     // alert("Start was pressed");
-    //     sendEventToServer("start");
-
-    // })
-
-    // $("#stopButton").on("click", function (e) {
-    //     e.preventDefault();
-    //     alert("Stop was pressed");
-    // })
-
-    $("#resetButton").on("click", function (e) {
-        e.preventDefault();
-        if ($("#numberControl").val() != "") {
-            alert("The value was: " + $("#numberControl").val());
-            $("#numberControl").val('0')
-        }
-    })
 
     // Gets the cursor x and y position
     $("body").on("mouseover", function (e) {
