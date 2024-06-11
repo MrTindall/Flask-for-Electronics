@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, jsonify #type: ignore
 import threading
 from functions.functions import * 
-
+#Test
 app = Flask(__name__)
 
 func = Functions()
